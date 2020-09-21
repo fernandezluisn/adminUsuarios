@@ -14,9 +14,11 @@ import {environment} from '../environments/environment';
 import {AngularFireAuth} from '@angular/fire/auth';
 
 import {AuthService} from '../app/servicios/auth.service';
+import {BdaService} from '../app/servicios/bda.service';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent ],
   entryComponents: [],
   imports: [BrowserModule, 
     IonicModule.forRoot(), 
@@ -27,6 +29,7 @@ import {AuthService} from '../app/servicios/auth.service';
     SplashScreen,
     AngularFireAuth,
     AuthService,
+    BdaService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

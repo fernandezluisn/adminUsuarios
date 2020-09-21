@@ -25,7 +25,88 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-.danger-alert-btn {
-    background-color: red!important;
-    color:white!important;
+:root {
+    /* Set the background of the entire app */
+    --ion-background-color: rgba(51, 54, 56, 0.966);
+    /* Set the font family of the entire app */
+    --ion-font-family:verdana!important;
+    //--ion-background-color: rgba(111, 112, 112, 0.795);
+    --ion-text-color: rgb(253, 253, 252);
+
+   
+  }
+
+ 
+
+  
+
+  ion-button {
+    --color: rgb(247, 244, 244);
+    --border:solid black 2rem;    
+    margin-left: 10%;
+    width: 80%;
+    margin-top: 1rem; 
+    margin-bottom: 1.8rem;
+    text-align: right;
+    height: 3rem;
+  }
+
+  ion-button.centrar {
+    --color: black;
+    --border:solid black 2rem;
+    --border-radius: 0rem;
+   
+    --font-size:large;  
+    margin-left: 30%;
+    width: 40%;
+    margin-top: 1rem; 
+    height: 5rem;
+  }
+
+  ion-img.iconito{
+      height: 3rem;
+      position: left, absolute;
+      
+  }
+
+  select{
+    margin-top: 2rem;
+    width: 40rem;
+    margin-left: 15%;
+    border: 0.1rem solid red;
+    color: black;
+    height: 3rem;
+    font-size: large;
+    
+    
+  }
+
+  .abajo{    
+      position:absolute;
+      bottom:1rem;       
+  }
+  
+
+  ion-item{
+      margin-top: 1rem;
+      width: 70%;
+      margin-left: 15%;
+      border: 0.1rem solid rgb(252, 249, 249);
+      
+      --ion-text-color: rgb(250, 249, 249);
+  }
+
+  .alert-message.sc-ion-alert-md{
+    color: rgb(2, 0, 0);
+  }
+
+  .alert-button.sc-ion-alert-md{
+      color: rgb(1, 29, 1);
+  }
+
+  .danger-alert-btn {    
+    --ion-text-color: black;
+    --ion-border: 1rem black solid;
+    --ion-background-color: rgb(240, 50, 36);
+    --ion-font-family:bold, "roboto";   
 }

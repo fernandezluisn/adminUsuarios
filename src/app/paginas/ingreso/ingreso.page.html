@@ -1,0 +1,43 @@
+  
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ingresar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>
+      Correo electronico
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Contraseña
+    </ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>  
+  
+  <div style="text-align: center; margin: 3%;">
+    <h4> Bienvenido a su sistema de gestión de usuarios. Ingrese sus datos para comenzar a utilizar la aplicación o seleccione una de las siguientes opciones:</h4>
+  </div>
+  
+  
+    <p style="text-align: right; margin: 7%; width: 40;" (click)="carg2('Invitado')">INVITADO</p>
+    <p style="text-align: right; margin: 7%; width: 40;" (click)="carg2('Admin')">ADMINISTRADOR</p>
+    <p style="text-align: right; margin: 7%; width: 40;" (click)="carg2('Tester')">TESTER</p>
+    <p style="text-align: right; margin: 7%; width: 40;" (click)="carg2('Usuario')">USUARIO</p>
+    <p style="text-align: right; margin: 7%; width: 40;" (click)="carg2('Crear nuevo usuario')">Ingresar con mi cuenta</p>
+  
+    <p style="text-align: center; margin: 10%; width: 40; color: rgb(126, 126, 245);" (click)="login2()">Si aún no tiene un usuario creado presione aquí.</p>
+  
+  
+  <ion-item-divider  class="abajo">   
+    <ion-button color="primary" size="large" (click)="login()">Entrar</ion-button>
+  </ion-item-divider>
+
+  
+
+</ion-content>

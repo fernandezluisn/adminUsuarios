@@ -1,13 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Registro de usuarios</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="true">
+
   <ion-item>
     <ion-label>
-      Email
+      Nombre
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Apellido
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="apellido"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Correo electrónico
     </ion-label>
     <ion-input type="text" [(ngModel)]="email"></ion-input>
   </ion-item>
@@ -19,8 +34,46 @@
     <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
 
+  <ion-item>
+    <ion-label>
+      Ingrese nuevamente la contraseña
+    </ion-label>
+    <ion-input type="password" [(ngModel)]="password2"></ion-input>
+  </ion-item>
+
+  
+    
+  <ion-item>
+      <ion-label>
+        Perfil
+      </ion-label>
+      <div class="form-check" *ngFor="let item of perfiles">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value=item (change)="radio(item)">
+        <label class="form-check-label" for="exampleRadios1">
+          {{item}}
+        </label>
+      </div>
+    </ion-item>
+
+    
+      <ion-item>
+        <ion-label>
+          Sexo
+        </ion-label>
+        <select [(ngModel)]="sexo" class="form-control" style="width: 12rem;">
+          <option [value]="item" *ngFor="let item of sexos">{{item}}</option>
+      </select> 
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          Identificación
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="id"></ion-input>
+      </ion-item>
+
   <ion-item-divider>
     <ion-button size="large" (click)="registrar()">Registrar</ion-button>
-    <ion-button size="large" (click)="login()">Login</ion-button>
+    
   </ion-item-divider>
 </ion-content>

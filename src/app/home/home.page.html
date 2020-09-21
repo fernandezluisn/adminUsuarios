@@ -1,18 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Bienvenido a Registrando
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
 
-  <app-login></app-login>
-
+  <table style="margin-left: 10%; margin-top: 2rem;width: 80%; text-align: center; ">
+  
+    <thead>
+      <tr style="font-size: 1.2rem;">
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Correo</th>      
+      </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let usuario of listado" style="border-top: blue solid 0.1rem; height: 2rem;">
+        <td scope="row" >{{usuario.nombre}}</td>
+        <td scope="row" >{{usuario.apellido}}</td>
+        <td scope="row" >{{usuario.correo}}</td>    
+      </tr>       
+    </tbody>
+  </table>
+  
+  <ion-item-divider>
+    <ion-button *ngIf="esAdmin" size="large" (click)="registrar()">Dar de alta un usuario</ion-button>
+    
+  </ion-item-divider>
+  
 </ion-content>
