@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
   
-
+<h4 style="margin-left: 1rem;">Los siguientes son los usuarios registrados en el sistema:</h4>
   <table style="margin-left: 10%; margin-top: 2rem;width: 80%; text-align: center; ">
   
     <thead>
@@ -27,9 +27,12 @@
     </tbody>
   </table>
   
-  <ion-item-divider>
-    <ion-button *ngIf="esAdmin" size="large" (click)="registrar()">Dar de alta un usuario</ion-button>
-    
+  <ion-item-divider *ngIf="esAdmin">
+    <ion-button  size="large" (click)="registrar()">Dar de alta un usuario</ion-button>    
   </ion-item-divider>
+
+  <ion-button class="apagar" color="dark" (click)="cerrar()">
+    <ion-icon name="power-sharp"></ion-icon>
+  </ion-button>
   
 </ion-content>

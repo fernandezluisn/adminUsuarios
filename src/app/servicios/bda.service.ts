@@ -35,6 +35,10 @@ export class BdaService {
     return this.db.collection('usuarios').add({...emp});
   }
 
+  createObjeto(emp:any): Promise<DocumentReference> {
+    return this.db.collection('objetos').add({...emp});
+  }
+
   devolverListadoUsuarios(){
     return this.listaUsuarios;
   }

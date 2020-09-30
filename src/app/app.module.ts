@@ -16,6 +16,8 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {AuthService} from '../app/servicios/auth.service';
 import {BdaService} from '../app/servicios/bda.service';
 
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+
 
 @NgModule({
   declarations: [AppComponent ],
@@ -28,6 +30,7 @@ import {BdaService} from '../app/servicios/bda.service';
     StatusBar,
     SplashScreen,
     AngularFireAuth,
+    BarcodeScanner,
     AuthService,
     BdaService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

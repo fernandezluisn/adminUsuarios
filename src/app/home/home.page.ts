@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
+import { element } from 'protractor';
 import { Usuario } from 'src/clases/usuario';
 import { AuthService } from '../servicios/auth.service';
 import { BdaService } from '../servicios/bda.service';
+
 
 @Component({
   selector: 'app-home',
@@ -20,29 +22,37 @@ export class HomePage {
   anda=false;
 
   constructor(private bda:BdaService, private service:AuthService, private router:Router, 
-    private loadingCtrl: LoadingController ) {
-    
+    private loadingCtrl: LoadingController ) {  
 
-    this.service.tomarUsuario().then(element=>
-      {
+     
+         
+      this.service.tomarUsuario().then(element=>{
         this.user=element;
-        console.log(element);
+        //console.log(element.email);
+
         this.bda.devolverListadoUsuarios().subscribe(lista=>{      
           let listaO=this.ordenar(lista);
           this.listado=listaO;
-
-          lista.filter(elementF=>{
+          
+          this.listado.forEach(elementF=>{
             if(elementF.correo==this.user.email){
+              
               this.usuarioLogeado=elementF;
               if(this.usuarioLogeado.perfil=="Admin"){
                 this.esAdmin=true;
+                console.log("esAdmin");
               }
               this.anda=true;
             }
           })
+          
         })
-      }
-      );
+        
+      }) 
+        
+        
+      
+      
     
   }
 
@@ -73,6 +83,12 @@ export class HomePage {
 
   registrar(){
     this.router.navigate(['login']);
+  }
+
+  cerrar(){
+    this.presentLoading("Cerrando");
+    this.service.logOutUser();    
+    this.router.navigate(['ingreso']);
   }
 
 }

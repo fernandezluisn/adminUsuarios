@@ -22,6 +22,13 @@
 
   <ion-item>
     <ion-label>
+      DNI
+    </ion-label>
+    <ion-input type="number" [(ngModel)]="dni"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
       Correo electrónico
     </ion-label>
     <ion-input type="text" [(ngModel)]="email"></ion-input>
@@ -73,7 +80,25 @@
       </ion-item>
 
   <ion-item-divider>
-    <ion-button size="large" (click)="registrar()">Registrar</ion-button>
+    <ion-button size="small" (click)="registrar()">Registrar</ion-button>
     
   </ion-item-divider>
+
+  <ion-item-divider>
+    <ion-button size="small" (click)="escanear()">Escanear</ion-button>
+    
+  </ion-item-divider>
+
+  <ion-item-divider>
+    <ion-button size="small" (click)="subir()">Subir</ion-button>
+    
+  </ion-item-divider>
+
+  <ion-text color="secondary">
+    <h2>{{data}}</h2>
+  </ion-text>
+
+  <ion-button class="apagar" color="dark" (click)="cerrar()">
+    <ion-icon name="power-sharp"></ion-icon>
+  </ion-button>
 </ion-content>
